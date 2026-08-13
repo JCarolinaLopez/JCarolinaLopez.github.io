@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f4efe3">
+<title>Carolina Lopez — Research Economist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4efe3;
+    --surface:#fbf8f1;
+    --surface-2:#f7f1e5;
+    --ink:#211f1b;
+    --muted:#6f6757;
+    --line:#e5ddca;
+    --accent:#b3502b;
+    --accent-2:#8c3d1f;
+    --chip:#ece2cf;
+    --radius:14px;
+    --maxw:820px;
+    --serif:"Fraunces",Georgia,"Times New Roman",serif;
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:var(--sans);font-size:17px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{color:var(--accent-2);text-decoration:underline;text-underline-offset:2px}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:color-mix(in srgb,var(--bg) 88%,transparent);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{
+    max-width:var(--maxw);margin:0 auto;padding:14px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .brand{font-family:var(--serif);font-size:22px;font-weight:600;letter-spacing:.2px;color:var(--ink);cursor:pointer}
+  nav{display:flex;gap:6px;flex-wrap:wrap}
+  nav button{
+    font-family:var(--sans);font-size:15px;color:var(--muted);
+    background:none;border:none;padding:6px 12px;border-radius:999px;cursor:pointer;
+    transition:color .15s,background .15s;
+  }
+  nav button:hover{color:var(--ink);background:var(--surface-2)}
+  nav button.active{color:var(--accent);font-weight:600;background:var(--surface)}
+
+  main{max-width:var(--maxw);margin:0 auto;padding:56px 24px 96px}
+  section[data-view]{display:none;animation:fade .35s ease}
+  section[data-view].on{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}}
+
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,5vw,42px);line-height:1.1;margin:0 0 6px}
+  h2{font-family:var(--serif);font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 26px}
+  .lead{color:var(--muted);font-size:18px}
+
+  /* Home */
+  .hero{display:flex;gap:30px;align-items:center;margin-bottom:34px;flex-wrap:wrap}
+  .avatar{
+    width:94px;height:94px;border-radius:50%;flex:0 0 auto;
+    background:var(--surface-2);border:1px solid var(--line);
+    color:var(--accent);font-family:var(--serif);font-weight:500;font-size:34px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .hero .title{color:var(--accent);font-weight:600;font-size:17px;margin-top:2px}
+  .bio p{margin:0 0 16px;max-width:64ch}
+  .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+  .btn{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:14px;font-weight:500;padding:9px 16px;border-radius:999px;
+    background:var(--accent);color:#fff;border:1px solid var(--accent);
+    transition:background .15s,transform .05s;
+  }
+  .btn:hover{background:var(--accent-2);color:#fff;text-decoration:none}
+  .btn.ghost{background:transparent;color:var(--accent)}
+  .btn.ghost:hover{background:var(--surface);color:var(--accent-2)}
+
+  /* Paper cards */
+  .paper{
+    padding:30px 0;margin:0;display:flex;gap:22px;
+    border-bottom:1px solid var(--line);
+  }
+  .paper:last-of-type{border-bottom:none}
+  .num{font-family:var(--serif);font-size:14px;font-weight:500;color:var(--muted);opacity:.85;padding-top:6px;min-width:24px;font-variant-numeric:tabular-nums}
+  .paper .body{flex:1;min-width:0}
+  .ptitle{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.3;margin:0 0 6px}
+  .ptitle a{color:var(--ink)}
+  .ptitle a:hover{color:var(--accent)}
+  .authors{color:var(--muted);font-size:15.5px;margin:0 0 12px}
+  .authors b{color:var(--ink);font-weight:500}
+
+  .chips{margin:0 0 10px}
+  .chip{font-size:14.5px;font-style:italic;color:var(--muted)}
+  .chip.award{color:#96631a}
+  .chip.wip{color:#3f7a58}
+
+  .links{display:flex;flex-wrap:wrap;align-items:center;margin:0 0 12px}
+  .rlink{font-size:14.5px;font-weight:500;color:var(--accent)}
+  .rlink:hover{color:var(--accent-2);text-decoration:underline;text-underline-offset:2px}
+  .rlink:not(:last-child){margin-right:11px}
+  .rlink:not(:last-child)::after{content:"·";color:var(--muted);opacity:.55;margin-left:11px;font-weight:400}
+
+  .abstract-toggle{
+    display:inline-flex;align-items:center;gap:6px;cursor:pointer;
+    font-family:var(--sans);font-size:14px;font-style:italic;font-weight:500;color:var(--accent);
+    background:none;border:none;padding:2px 0;
+  }
+  .abstract-toggle:hover{color:var(--accent-2);text-decoration:underline;text-underline-offset:2px}
+  .abstract-toggle .caret{transition:transform .2s;font-size:9px;opacity:.7}
+  .abstract-toggle[aria-expanded="true"] .caret{transform:rotate(90deg)}
+  .abstract-body{
+    display:grid;grid-template-rows:0fr;transition:grid-template-rows .28s ease;
+  }
+  .abstract-body > div{overflow:hidden}
+  .abstract-body.open{grid-template-rows:1fr;margin-top:12px}
+  .abstract-body p{margin:0;color:#403a30;font-size:15.5px;line-height:1.7}
+
+  .subhead{font-family:var(--serif);font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:44px 0 22px;border-top:1px solid var(--line);padding-top:26px}
+
+  /* Publications */
+  .pub{padding:20px 0;border-bottom:1px solid var(--line);display:flex;gap:20px}
+  .pub:first-of-type{padding-top:0}
+  .pub .year{font-family:var(--serif);font-weight:600;color:var(--muted);min-width:48px}
+  .pub .ptitle{font-size:18px;margin-bottom:4px}
+  .venue{font-style:italic;color:var(--muted);font-size:14.5px;margin:4px 0 10px}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:560px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px}
+  .card .k{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .card .v{font-size:16px;line-height:1.5}
+
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:13.5px;text-align:center;padding:26px 24px 40px}
+
+  @media (max-width:560px){
+    main{padding:40px 20px 72px}
+    .bar{padding:12px 18px}
+    .paper{flex-direction:column;gap:8px;padding:20px}
+    .num{padding-top:0}
+    .contact-grid{grid-template-columns:1fr}
+    .pub{flex-direction:column;gap:4px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <div class="brand" data-go="home">Carolina Lopez</div>
+    <nav>
+      <button data-go="home" class="active">Home</button>
+      <button data-go="research">Research</button>
+      <button data-go="publications">Publications</button>
+      <button data-go="contact">Contact</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HOME -->
+  <section data-view="home" class="on">
+    <div class="hero">
+      <div class="avatar">CL</div>
+      <div>
+        <h1>Carolina Lopez</h1>
+        <div class="title">Research Economist · World Bank, Development Research Group</div>
+      </div>
+    </div>
+    <div class="bio">
+      <p>Welcome! I am a Research Economist in the World Bank's Development Research Group (Human Development Team). I focus on topics related to education, human capital, and behavioral economics. In my research, I study how people's beliefs about the world affect their behavior and welfare.</p>
+      <p>Before joining the World Bank, I was a Post-Doctoral Research Fellow at the Harvard Kennedy School. I received my Ph.D. in Economics from Brown University.</p>
+      <div class="btnrow">
+        <a class="btn" href="#" data-cv>Curriculum Vitae</a>
+        <a class="btn ghost" href="https://scholar.google.com/citations?user=" target="_blank" rel="noopener">Google Scholar</a>
+        <a class="btn ghost" href="mailto:carolina_lopez@worldbank.org">Email</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section data-view="research">
+    <h2>Working Papers</h2>
+
+    <!-- 1 -->
+    <article class="paper">
+      <div class="num">01</div>
+      <div class="body">
+        <h3 class="ptitle"><a href="https://papers.jcarolinalopez.com/Misperceptions_Secondary_School_Completion_CL.pdf" target="_blank" rel="noopener">Tripping at the Finish Line: Experimental Evidence on the Role of Misperceptions on Secondary School Completion</a></h3>
+        <div class="chips"><span class="chip award">Awarded the George Borts' Prize for an outstanding dissertation — Brown University</span></div>
+        <div class="links">
+          <a class="rlink" href="https://papers.jcarolinalopez.com/Misperceptions_Secondary_School_Completion_CL.pdf" target="_blank" rel="noopener">PDF</a>
+          <a class="rlink" href="https://www.socialscienceregistry.org/trials/4511" target="_blank" rel="noopener">AEA Registry</a>
+          <a class="rlink" href="https://blogs.worldbank.org/impactevaluations/tripping-finish-line-misperceptions-and-secondary-school-completion-argentina" target="_blank" rel="noopener">World Bank Blog</a>
+        </div>
+        <button class="abstract-toggle" aria-expanded="false"><span class="caret">▶</span> Abstract</button>
+        <div class="abstract-body"><div><p>Students may put insufficient effort into graduating due to inaccurate beliefs about graduation probabilities or the economic benefits of obtaining a high school diploma, missing out on large economic returns. In an experiment with senior high-school students in Argentina, I test the effectiveness of providing information about efficiently allocating effort during senior year, to correct beliefs about their graduation chances. A separate group receives information about the returns to education. The treatments increase graduation by 10 and 20 percent, respectively, and college enrollment by 38 percent. Graduation improvements are larger for students with a lower probability of graduating at baseline.</p></div></div>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="paper">
+      <div class="num">02</div>
+      <div class="body">
+        <h3 class="ptitle">AI in the Classroom: Evaluating the Impact of Teacher Training on Practices and Student Outcomes</h3>
+        <p class="authors">with <b>Carla Z. Glave</b>, <b>Ezequiel Molina</b>, and <b>Román Andrés Zárate</b></p>
+        <div class="links">
+          <a class="rlink" href="https://www.socialscienceregistry.org/trials/16336" target="_blank" rel="noopener">AEA Registry</a>
+          <a class="rlink" href="https://news.microsoft.com/source/latam/features/ai/world-bank-peru-teachers-copilot/?lang=en" target="_blank" rel="noopener">Microsoft feature</a>
+        </div>
+        <button class="abstract-toggle" aria-expanded="false"><span class="caret">▶</span> Abstract</button>
+        <div class="abstract-body"><div><p>Can artificial intelligence (AI) improve teaching practices and student learning in developing countries? This study evaluates whether training primary school teachers in Peru to integrate Large Language Models (LLMs) into their daily work can enhance instructional quality and student outcomes. We conduct a large-scale, multi-arm, field experiment across public schools in Lima, Peru. The main intervention is a structured teacher training program focused on the use of AI for educational practices. In addition to the primary treatment, the study includes two cross-randomized variations. The first compares two modes of ongoing support—peer-based networks versus authority-led guidance—to assess which approach better sustains AI adoption. The second introduces a complementary training that emphasizes tailoring instruction to students' learning levels, following "Teaching at the Right Level" (TaRL) principles. By examining both implementation and impacts on teaching practices and student learning, this study provides timely evidence on the potential for AI to equitably and effectively support educators and learners in low- and middle-income contexts.</p></div></div>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="paper">
+      <div class="num">03</div>
+      <div class="body">
+        <h3 class="ptitle"><a href="https://papers.jcarolinalopez.com/Lopez-Sautmann-Schaner-Patients_Value_Medical_Care-2024-01.pdf" target="_blank" rel="noopener">Do Patients Value High-Quality Medical Care? Experimental Evidence from Malaria Diagnosis and Treatment</a></h3>
+        <p class="authors">with <b>Anja Sautmann</b> and <b>Simone Schaner</b></p>
+        <div class="chips"><span class="chip">Submitted</span></div>
+        <div class="links">
+          <a class="rlink" href="https://papers.jcarolinalopez.com/Lopez-Sautmann-Schaner-Patients_Value_Medical_Care-2024-01.pdf" target="_blank" rel="noopener">PDF</a>
+          <a class="rlink" href="https://www.nber.org/papers/w32075" target="_blank" rel="noopener">NBER</a>
+          <a class="rlink" href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099746004042478044/idu17547a127149861475c1895a10c7fac248530" target="_blank" rel="noopener">World Bank WP</a>
+        </div>
+        <button class="abstract-toggle" aria-expanded="false"><span class="caret">▶</span> Abstract</button>
+        <div class="abstract-body"><div><p>Can information about the value of diagnostic tests improve provider practice and help patients recognize higher quality of care? In a randomized experiment at public clinics in Mali, health providers and patients received tailored information about the importance of rapid diagnostic tests (RDTs) for malaria. The provider training increased provider reliance on RDTs, improving the match between a patient's malaria status and treatment with antimalarials by 15-30 percent. Nonetheless, patients were significantly less satisfied with the care they received, driven by those whose prior beliefs did not match their true malaria status. The patient information intervention did not affect treatment outcomes or patient satisfaction and reduced malaria testing. These findings are consistent with highly persistent patient beliefs that translate into low demand for diagnostic testing and limit patients' ability to recognize improved quality of care.</p></div></div>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="paper">
+      <div class="num">04</div>
+      <div class="body">
+        <h3 class="ptitle"><a href="https://papers.jcarolinalopez.com/Natives_DalBo-Lopez.pdf" target="_blank" rel="noopener">The Socioeconomic Outcomes of Native Groups in Argentina</a></h3>
+        <p class="authors">with <b>Pedro Dal Bó</b></p>
+        <div class="links">
+          <a class="rlink" href="https://papers.jcarolinalopez.com/Natives_DalBo-Lopez.pdf" target="_blank" rel="noopener">PDF</a>
+          <a class="rlink" href="https://www.nber.org/papers/w32704" target="_blank" rel="noopener">NBER</a>
+          <a class="rlink" href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099310206282421212/idu1770203d213d8114ba5186c51491855b667b1" target="_blank" rel="noopener">World Bank WP</a>
+        </div>
+        <button class="abstract-toggle" aria-expanded="false"><span class="caret">▶</span> Abstract</button>
+        <div class="abstract-body"><div><p>This study uses individual-level census data from Argentina to examine the socioeconomic disparities between Native and non-Native people. Native people fare worse across a variety of indicators, including housing, education, employment, and health. On average, the observed disparities amount to 12 percent of the standard deviation and persist even after controlling for factors such as geographic location. Furthermore, there are differences in the intergenerational transmission of education between Natives and non-Natives: for each level of education of the parents, the children of Natives have, on average, fewer years of education than the children of non-Natives. Finally, the study also reveals large differences between Native groups: while some achieve average outcomes that surpass those of the non-Native population, others significantly lag behind. Notably, these differences are correlated with a characteristic of their pre-Columbian economy: the practice of agriculture.</p></div></div>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="paper">
+      <div class="num">05</div>
+      <div class="body">
+        <h3 class="ptitle"><a href="https://papers.jcarolinalopez.com/Lopez_Pineda_CAL_DR.pdf" target="_blank" rel="noopener">Improving Student Outcomes through Adaptive Learning Platforms: Experimental Evidence from the Dominican Republic</a></h3>
+        <p class="authors">with <b>Astrid Pineda</b></p>
+        <div class="links">
+          <a class="rlink" href="https://papers.jcarolinalopez.com/Lopez_Pineda_CAL_DR.pdf" target="_blank" rel="noopener">PDF</a>
+          <a class="rlink" href="https://www.socialscienceregistry.org/trials/12383" target="_blank" rel="noopener">AEA Registry</a>
+          <a class="rlink" href="https://documents1.worldbank.org/curated/en/099902106292633899/pdf/IDU-8de7bc9d-8bba-40a5-96eb-3f85f197d2c1.pdf" target="_blank" rel="noopener">World Bank WP</a>
+        </div>
+        <button class="abstract-toggle" aria-expanded="false"><span class="caret">▶</span> Abstract</button>
+        <div class="abstract-body"><div><p>Most students in developing countries receive grade-level instruction despite lacking prerequisite skills, a mismatch that widens learning gaps as students progress. This paper reports evidence from a randomized controlled trial across 38 classrooms and 1,333 ninth-grade students in the Dominican Republic, in which classrooms were randomly assigned to one of three arms: computer-adaptive learning (CAL) software replacing two of seven weekly mathematics hours, CAL combined with small-group tutoring, or a business-as-usual control. CAL improved test scores by 0.29–0.31 standard deviations over six months, among the larger effects documented for education technology interventions in developing countries. Adding small-group tutoring yielded no detectable improvement over CAL alone; if anything, classrooms assigned to both interventions showed smaller gains than those receiving CAL alone, though this difference is not statistically significant. Evidence on mechanisms indicates that tutoring classrooms exhibited reduced engagement with the CAL platform. These results suggest that computer-adaptive learning software can be effectively integrated into classroom instruction to improve learning at scale, but that combining multiple interventions is not guaranteed to produce additive benefits and may instead generate unintended behavioral responses that offset their effectiveness.</p></div></div>
+      </div>
+    </article>
+
+    <div class="subhead">Work in Progress</div>
+
+    <!-- WIP -->
+    <article class="paper">
+      <div class="num">06</div>
+      <div class="body">
+        <h3 class="ptitle">The Personalization Trap: Does AI Tutoring Build Learners or Dependence?</h3>
+        <p class="authors">with <b>Ezequiel Molina</b> and <b>Germán Reyes</b></p>
+        <div class="chips"><span class="chip wip">In the field — Lima, Peru</span></div>
+        <div class="links">
+          <a class="rlink" href="https://www.socialscienceregistry.org/trials/17917" target="_blank" rel="noopener">AEA Registry</a>
+        </div>
+        <button class="abstract-toggle" aria-expanded="false"><span class="caret">▶</span> Abstract</button>
+        <div class="abstract-body"><div><p>This study evaluates the impact of an AI-powered math tutoring platform and an AI career coaching chatbot on learning outcomes and educational aspirations among 5th-year secondary students in public schools in Lima, Peru. The AI math tutor covers Peru's national math curriculum and is used during regular math class time in school computer labs, supervised by students' regular math teacher. The AI career coach helps students explore post-secondary options, understand economic returns to education, and develop concrete career plans during existing tutoría (guidance) periods. The study uses a cluster-randomized design with approximately 100 schools as the unit of randomization and three study arms: (1) AI tutoring with learning-science modifications plus career coaching, (2) AI tutoring in standard configuration plus career coaching, and (3) business-as-usual control. The learning-science modifications embed three moments of student cognitive effort (a retrieval practice opener at the start of each session, a predict-reveal-diagnose sequence on errors, and an error detection task on mastered topics) that return to the student metacognitive operations the algorithm otherwise performs on their behalf. AI tutoring platforms could produce learning gains that are substantially non-durable because the algorithm silently performs metacognitive operations (retrieval, error diagnosis, mastery evaluation) that students need to learn to perform independently—a phenomenon we term the personalization trap. The three modifications test whether returning these cognitive operations to the student makes learning gains persist after platform removal. Primary outcomes are multiple math assessments during the academic year. The study tests whether AI tutoring produces learning gains within existing public-school constraints and whether learning-science modifications to the platform's default interaction design improve the durability of those gains.</p></div></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section data-view="publications">
+    <h2>Publications</h2>
+
+    <div class="pub">
+      <div class="year">2023</div>
+      <div class="body">
+        <h3 class="ptitle">Exacerbated Inequalities: the Learning Loss from COVID-19 in Italy</h3>
+        <p class="authors">with <b>Michela Carlana</b> and <b>Eliana La Ferrara</b></p>
+        <p class="venue">AEA Papers and Proceedings, vol. 113, pp. 489–493</p>
+        <div class="links"><a class="rlink" href="https://www.aeaweb.org/articles?id=10.1257/pandp.20231010" target="_blank" rel="noopener">Published version</a></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2022</div>
+      <div class="body">
+        <h3 class="ptitle">Does Patient Demand Contribute to the Overuse of Prescription Drugs?</h3>
+        <p class="authors">with <b>Anja Sautmann</b> and <b>Simone Schaner</b></p>
+        <p class="venue">American Economic Journal: Applied Economics, vol. 14, no. 1, pp. 225–260</p>
+        <div class="links">
+          <a class="rlink" href="https://papers.jcarolinalopez.com/Lopez_Sautmann_Schaner_2020.pdf" target="_blank" rel="noopener">PDF</a>
+          <a class="rlink" href="https://www.nber.org/papers/w25284" target="_blank" rel="noopener">NBER</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2016</div>
+      <div class="body">
+        <h3 class="ptitle">Long-run effects of youth training programs: Experimental evidence from Argentina</h3>
+        <p class="authors">with <b>María Laura Alzúa</b> and <b>Guillermo Cruces</b></p>
+        <p class="venue">Economic Inquiry, vol. 54, issue 4, pp. 1839–1859</p>
+        <div class="links"><a class="rlink" href="https://onlinelibrary.wiley.com/doi/abs/10.1111/ecin.12348" target="_blank" rel="noopener">Published version</a></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2015</div>
+      <div class="body">
+        <h3 class="ptitle">Effect of a community-led sanitation intervention on child diarrhoea and child growth in rural Mali: A cluster randomised controlled trial</h3>
+        <p class="authors">with <b>Amy Pickering</b>, <b>Habiba Djebbari</b>, <b>Massa Coulibaly</b>, and <b>María Laura Alzúa</b></p>
+        <p class="venue">The Lancet Global Health, vol. 3, no. 11, pp. 701–711</p>
+        <div class="links"><a class="rlink" href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X%2815%2900144-8/fulltext" target="_blank" rel="noopener">Published version</a></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2014</div>
+      <div class="body">
+        <h3 class="ptitle">The long and winding road towards fiscal decentralization</h3>
+        <p class="authors">with <b>María Laura Alzúa</b></p>
+        <p class="venue">Económica — Universidad Nacional de La Plata, vol. LX, pp. 3–43</p>
+        <div class="links"><a class="rlink" href="https://revistas.unlp.edu.ar/Economica/article/view/5347" target="_blank" rel="noopener">Published version</a></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year">2013</div>
+      <div class="body">
+        <h3 class="ptitle">A Multidimensional Poverty Analysis: Recent Evidence of the Regions of Argentina</h3>
+        <p class="authors">with <b>Romina Safojan</b></p>
+        <p class="venue">Revista de Economía Política de Buenos Aires (REPBA) — Universidad de Buenos Aires, no. 7, vol. 12, pp. 9–44</p>
+        <div class="links"><a class="rlink" href="https://ojs.econ.uba.ar/index.php/REPBA/article/view/558" target="_blank" rel="noopener">Published version</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section data-view="contact">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <div class="card">
+        <div class="k">Email</div>
+        <div class="v"><a href="mailto:carolina_lopez@worldbank.org">carolina_lopez@worldbank.org</a></div>
+      </div>
+      <div class="card">
+        <div class="k">Mailing address</div>
+        <div class="v">The World Bank<br>1818 H Street, N.W.<br>Washington, DC 20433, USA</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© Carolina Lopez · World Bank, Development Research Group · Mockup design</footer>
+
+<script>
+  // Tab navigation
+  const views = document.querySelectorAll('section[data-view]');
+  const btns = document.querySelectorAll('[data-go]');
+  function go(name){
+    views.forEach(v=>v.classList.toggle('on', v.dataset.view===name));
+    document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active', b.dataset.go===name));
+    window.scrollTo({top:0,behavior:'instant' in window ? 'instant':'auto'});
+  }
+  btns.forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+
+  // Collapsible abstracts
+  document.querySelectorAll('.abstract-toggle').forEach(t=>{
+    t.addEventListener('click',()=>{
+      const open = t.getAttribute('aria-expanded')==='true';
+      t.setAttribute('aria-expanded', String(!open));
+      t.nextElementSibling.classList.toggle('open', !open);
+    });
+  });
+
+  // CV placeholder note
+  document.querySelectorAll('[data-cv]').forEach(a=>{
+    a.addEventListener('click',e=>{e.preventDefault();alert('Reemplazar este enlace por la URL de tu CV (PDF).');});
+  });
+</script>
+</body>
+</html>
