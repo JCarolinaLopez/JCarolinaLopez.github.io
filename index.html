@@ -132,6 +132,14 @@
   .abstract-body p{margin:0;color:#33414f;font-size:15.5px;line-height:1.7}
 
   .subhead{font-family:var(--serif);font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:44px 0 22px;border-top:1px solid var(--line);padding-top:26px}
+  .cat-head{display:flex;align-items:center;gap:9px;width:100%;background:none;border:none;border-top:1px solid var(--line);cursor:pointer;font-family:var(--serif);font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);padding:18px 0;text-align:left}
+  .cat:first-child .cat-head{border-top:none;padding-top:0}
+  .cat-head .caret{font-size:9px;opacity:.65;transition:transform .2s}
+  .cat-head[aria-expanded="true"] .caret{transform:rotate(90deg)}
+  .cat-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+  .cat-body>div{overflow:hidden}
+  .cat-body.open{grid-template-rows:1fr}
+  .cat-body .pub:last-of-type{border-bottom:none}
 
   /* Publications */
   .pub{padding:10px 0;border-bottom:1px solid var(--line);display:flex;gap:20px}
@@ -317,77 +325,107 @@
 
   <!-- PUBLICATIONS -->
   <section data-view="publications">
-    <h2>Publications</h2>
 
-    <div class="pub">
-      <div class="year">2023</div>
-      <div class="body">
-        <h3 class="ptitle">Exacerbated Inequalities: the Learning Loss from COVID-19 in Italy <a class="titlelink" href="https://www.aeaweb.org/articles?id=10.1257/pandp.20231010" target="_blank" rel="noopener">Published version</a></h3>
-        <p class="authors">with <b>Michela Carlana</b> and <b>Eliana La Ferrara</b></p>
-        <p class="venue">AEA Papers and Proceedings, vol. 113, pp. 489–493</p>
-      </div>
-    </div>
-
-    <div class="pub">
-      <div class="year">2022</div>
-      <div class="body">
-        <h3 class="ptitle">Does Patient Demand Contribute to the Overuse of Prescription Drugs? <a class="titlelink" href="https://www.aeaweb.org/articles?id=10.1257/app.20190722" target="_blank" rel="noopener">Published version</a></h3>
-        <p class="authors">with <b>Anja Sautmann</b> and <b>Simone Schaner</b></p>
-        <p class="venue">American Economic Journal: Applied Economics, vol. 14, no. 1, pp. 225–260</p>
-        <div class="links">
-          <a class="rlink" href="https://www.nber.org/papers/w25284" target="_blank" rel="noopener">NBER</a>
+    <div class="cat">
+      <button class="cat-head" aria-expanded="false"><span class="caret">▶</span> Publications</button>
+      <div class="cat-body"><div>
+        <div class="pub">
+          <div class="year">2023</div>
+          <div class="body">
+            <h3 class="ptitle">Exacerbated Inequalities: the Learning Loss from COVID-19 in Italy</h3>
+            <p class="authors">with <b>Michela Carlana</b> and <b>Eliana La Ferrara</b></p>
+            <p class="venue">AEA Papers and Proceedings, vol. 113, pp. 489–493</p>
+            <div class="links">
+          <a class="rlink" href="https://www.aeaweb.org/articles?id=10.1257/pandp.20231010" target="_blank" rel="noopener">Published version</a>
+            </div>
+          </div>
         </div>
-      </div>
+
+        <div class="pub">
+          <div class="year">2022</div>
+          <div class="body">
+            <h3 class="ptitle">Does Patient Demand Contribute to the Overuse of Prescription Drugs?</h3>
+            <p class="authors">with <b>Anja Sautmann</b> and <b>Simone Schaner</b></p>
+            <p class="venue">American Economic Journal: Applied Economics, vol. 14, no. 1, pp. 225–260</p>
+            <div class="links">
+          <a class="rlink" href="https://www.aeaweb.org/articles?id=10.1257/app.20190722" target="_blank" rel="noopener">Published version</a>
+          <a class="rlink" href="https://www.nber.org/papers/w25284" target="_blank" rel="noopener">NBER</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="year">2016</div>
+          <div class="body">
+            <h3 class="ptitle">Long-run effects of youth training programs: Experimental evidence from Argentina</h3>
+            <p class="authors">with <b>María Laura Alzúa</b> and <b>Guillermo Cruces</b></p>
+            <p class="venue">Economic Inquiry, vol. 54, issue 4, pp. 1839–1859</p>
+            <div class="links">
+          <a class="rlink" href="https://onlinelibrary.wiley.com/doi/abs/10.1111/ecin.12348" target="_blank" rel="noopener">Published version</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="year">2015</div>
+          <div class="body">
+            <h3 class="ptitle">Effect of a community-led sanitation intervention on child diarrhoea and child growth in rural Mali: A cluster randomised controlled trial</h3>
+            <p class="authors">with <b>Amy Pickering</b>, <b>Habiba Djebbari</b>, <b>Massa Coulibaly</b>, and <b>María Laura Alzúa</b></p>
+            <p class="venue">The Lancet Global Health, vol. 3, no. 11, pp. 701–711</p>
+            <div class="links">
+          <a class="rlink" href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X%2815%2900144-8/fulltext" target="_blank" rel="noopener">Published version</a>
+            </div>
+          </div>
+        </div>
+      </div></div>
     </div>
 
-    <div class="pub">
-      <div class="year">2016</div>
-      <div class="body">
-        <h3 class="ptitle">Long-run effects of youth training programs: Experimental evidence from Argentina <a class="titlelink" href="https://onlinelibrary.wiley.com/doi/abs/10.1111/ecin.12348" target="_blank" rel="noopener">Published version</a></h3>
-        <p class="authors">with <b>María Laura Alzúa</b> and <b>Guillermo Cruces</b></p>
-        <p class="venue">Economic Inquiry, vol. 54, issue 4, pp. 1839–1859</p>
-      </div>
+    <div class="cat">
+      <button class="cat-head" aria-expanded="false"><span class="caret">▶</span> Books</button>
+      <div class="cat-body"><div>
+        <div class="pub">
+          <div class="year">2025</div>
+          <div class="body">
+            <h3 class="ptitle">El Director LIBRE: El Método de IA que Libera Horas de Papeleo para Liderar el Aprendizaje</h3>
+            <p class="authors">with <b>Ezequiel Molina</b>, <b>Octavio Lizama</b>, and <b>Paul Bambrick-Santoyo</b></p>
+            <p class="venue">World Bank</p>
+            <div class="links">
+          <a class="rlink" href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099731109172514920" target="_blank" rel="noopener">Read the book</a>
+            </div>
+          </div>
+        </div>
+      </div></div>
     </div>
 
-    <div class="pub">
-      <div class="year">2015</div>
-      <div class="body">
-        <h3 class="ptitle">Effect of a community-led sanitation intervention on child diarrhoea and child growth in rural Mali: A cluster randomised controlled trial <a class="titlelink" href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X%2815%2900144-8/fulltext" target="_blank" rel="noopener">Published version</a></h3>
-        <p class="authors">with <b>Amy Pickering</b>, <b>Habiba Djebbari</b>, <b>Massa Coulibaly</b>, and <b>María Laura Alzúa</b></p>
-        <p class="venue">The Lancet Global Health, vol. 3, no. 11, pp. 701–711</p>
-      </div>
+    <div class="cat">
+      <button class="cat-head" aria-expanded="false"><span class="caret">▶</span> Pre-doctoral publications</button>
+      <div class="cat-body"><div>
+        <div class="pub">
+          <div class="year">2014</div>
+          <div class="body">
+            <h3 class="ptitle">The long and winding road towards fiscal decentralization</h3>
+            <p class="authors">with <b>María Laura Alzúa</b></p>
+            <p class="venue">Económica, Universidad Nacional de La Plata, vol. LX, pp. 3–43</p>
+            <div class="links">
+          <a class="rlink" href="https://revistas.unlp.edu.ar/Economica/article/view/5347" target="_blank" rel="noopener">Published version</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="year">2013</div>
+          <div class="body">
+            <h3 class="ptitle">A Multidimensional Poverty Analysis: Recent Evidence of the Regions of Argentina</h3>
+            <p class="authors">with <b>Romina Safojan</b></p>
+            <p class="venue">Revista de Economía Política de Buenos Aires (REPBA), Universidad de Buenos Aires, no. 7, vol. 12, pp. 9–44</p>
+            <div class="links">
+          <a class="rlink" href="https://ojs.econ.uba.ar/index.php/REPBA/article/view/558" target="_blank" rel="noopener">Published version</a>
+            </div>
+          </div>
+        </div>
+      </div></div>
     </div>
 
-    <div class="subhead">Pre-doctoral publications</div>
-
-    <div class="pub">
-      <div class="year">2014</div>
-      <div class="body">
-        <h3 class="ptitle">The long and winding road towards fiscal decentralization <a class="titlelink" href="https://revistas.unlp.edu.ar/Economica/article/view/5347" target="_blank" rel="noopener">Published version</a></h3>
-        <p class="authors">with <b>María Laura Alzúa</b></p>
-        <p class="venue">Económica, Universidad Nacional de La Plata, vol. LX, pp. 3–43</p>
-      </div>
-    </div>
-
-    <div class="pub">
-      <div class="year">2013</div>
-      <div class="body">
-        <h3 class="ptitle">A Multidimensional Poverty Analysis: Recent Evidence of the Regions of Argentina <a class="titlelink" href="https://ojs.econ.uba.ar/index.php/REPBA/article/view/558" target="_blank" rel="noopener">Published version</a></h3>
-        <p class="authors">with <b>Romina Safojan</b></p>
-        <p class="venue">Revista de Economía Política de Buenos Aires (REPBA), Universidad de Buenos Aires, no. 7, vol. 12, pp. 9–44</p>
-      </div>
-    </div>
-
-    <div class="subhead">Books</div>
-
-    <div class="pub">
-      <div class="year">2025</div>
-      <div class="body">
-        <h3 class="ptitle">El Director LIBRE: El Método de IA que Libera Horas de Papeleo para Liderar el Aprendizaje <a class="titlelink" href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099731109172514920" target="_blank" rel="noopener">Read the book</a></h3>
-        <p class="authors">with <b>Ezequiel Molina</b>, <b>Octavio Lizama</b>, and <b>Paul Bambrick-Santoyo</b></p>
-        <p class="venue">World Bank</p>
-      </div>
-    </div>
   </section>
 
   <!-- CONTACT -->
@@ -424,6 +462,15 @@
       const open = t.getAttribute('aria-expanded')==='true';
       t.setAttribute('aria-expanded', String(!open));
       t.nextElementSibling.classList.toggle('open', !open);
+    });
+  });
+
+  // Collapsible publication categories
+  document.querySelectorAll('.cat-head').forEach(h=>{
+    h.addEventListener('click',()=>{
+      const open = h.getAttribute('aria-expanded')==='true';
+      h.setAttribute('aria-expanded', String(!open));
+      h.nextElementSibling.classList.toggle('open', !open);
     });
   });
 </script>
