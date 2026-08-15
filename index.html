@@ -89,7 +89,7 @@
 
   /* Paper cards */
   .paper{
-    padding:14px 0;margin:0;display:flex;gap:22px;
+    padding:10px 0;margin:0;display:flex;gap:22px;
     border-bottom:1px solid var(--line);
   }
   .paper:last-of-type{border-bottom:none}
@@ -105,6 +105,10 @@
   .chip{font-size:14.5px;font-style:italic;color:var(--muted)}
   .chip.award{color:#96631a}
   .chip.wip{color:#3f7a58}
+  .status{font-style:italic;color:var(--accent);font-size:15.5px}
+  .status.wip{color:#3f7a58}
+  .ptitle .titlelink{font-family:var(--sans);font-weight:500;font-size:13.5px;color:var(--accent);margin-left:10px;white-space:nowrap;vertical-align:middle;text-decoration:none}
+  .ptitle .titlelink:hover{text-decoration:underline;text-underline-offset:2px;color:var(--accent-2)}
 
   .links{display:flex;flex-wrap:wrap;align-items:center;margin:0 0 12px}
   .rlink{font-size:14.5px;font-weight:500;color:var(--accent)}
@@ -130,7 +134,7 @@
   .subhead{font-family:var(--serif);font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:44px 0 22px;border-top:1px solid var(--line);padding-top:26px}
 
   /* Publications */
-  .pub{padding:14px 0;border-bottom:1px solid var(--line);display:flex;gap:20px}
+  .pub{padding:10px 0;border-bottom:1px solid var(--line);display:flex;gap:20px}
   .pub:first-of-type{padding-top:0}
   .pub .year{font-family:var(--serif);font-weight:600;color:var(--muted);min-width:48px}
   .pub .ptitle{font-size:18px;margin-bottom:4px}
@@ -228,8 +232,7 @@
       <div class="num">03</div>
       <div class="body">
         <h3 class="ptitle"><a href="https://papers.jcarolinalopez.com/Lopez-Sautmann-Schaner-Patients_Value_Medical_Care-2024-01.pdf" target="_blank" rel="noopener">Do Patients Value High-Quality Medical Care? Experimental Evidence from Malaria Diagnosis and Treatment</a></h3>
-        <p class="authors">with <b>Anja Sautmann</b> and <b>Simone Schaner</b></p>
-        <div class="chips"><span class="chip">Submitted</span></div>
+        <p class="authors">with <b>Anja Sautmann</b> and <b>Simone Schaner</b> <span class="status">· Resubmitted</span></p>
         <div class="links">
           <a class="rlink" href="https://papers.jcarolinalopez.com/Lopez-Sautmann-Schaner-Patients_Value_Medical_Care-2024-01.pdf" target="_blank" rel="noopener">PDF</a>
           <a class="rlink" href="https://www.nber.org/papers/w32075" target="_blank" rel="noopener">NBER</a>
@@ -261,8 +264,7 @@
       <div class="num">05</div>
       <div class="body">
         <h3 class="ptitle"><a href="https://papers.jcarolinalopez.com/Lopez_Pineda_CAL_DR.pdf" target="_blank" rel="noopener">Improving Student Outcomes through Adaptive Learning Platforms: Experimental Evidence from the Dominican Republic</a></h3>
-        <p class="authors">with <b>Astrid Pineda</b></p>
-        <div class="chips"><span class="chip">Submitted</span></div>
+        <p class="authors">with <b>Astrid Pineda</b> <span class="status">· Submitted</span></p>
         <div class="links">
           <a class="rlink" href="https://papers.jcarolinalopez.com/Lopez_Pineda_CAL_DR.pdf" target="_blank" rel="noopener">PDF</a>
           <a class="rlink" href="https://www.socialscienceregistry.org/trials/12383" target="_blank" rel="noopener">AEA Registry</a>
@@ -280,13 +282,35 @@
       <div class="num">06</div>
       <div class="body">
         <h3 class="ptitle">The Personalization Trap: Does AI Tutoring Build Learners or Dependence?</h3>
-        <p class="authors">with <b>Ezequiel Molina</b> and <b>Germán Reyes</b></p>
-        <div class="chips"><span class="chip wip">In the field, Lima, Peru</span></div>
+        <p class="authors">with <b>Ezequiel Molina</b> and <b>Germán Reyes</b> <span class="status wip">· In the field, Lima, Peru</span></p>
         <div class="links">
           <a class="rlink" href="https://www.socialscienceregistry.org/trials/17917" target="_blank" rel="noopener">AEA Registry</a>
         </div>
         <button class="abstract-toggle" aria-expanded="false"><span class="caret">▶</span> Abstract</button>
         <div class="abstract-body"><div><p>This study evaluates the impact of an AI-powered math tutoring platform and an AI career coaching chatbot on learning outcomes and educational aspirations among 5th-year secondary students in public schools in Lima, Peru. The AI math tutor covers Peru's national math curriculum and is used during regular math class time in school computer labs, supervised by students' regular math teacher. The AI career coach helps students explore post-secondary options, understand economic returns to education, and develop concrete career plans during existing tutoría (guidance) periods. The study uses a cluster-randomized design with approximately 100 schools as the unit of randomization and three study arms: (1) AI tutoring with learning-science modifications plus career coaching, (2) AI tutoring in standard configuration plus career coaching, and (3) business-as-usual control. The learning-science modifications embed three moments of student cognitive effort (a retrieval practice opener at the start of each session, a predict-reveal-diagnose sequence on errors, and an error detection task on mastered topics) that return to the student metacognitive operations the algorithm otherwise performs on their behalf. AI tutoring platforms could produce learning gains that are substantially non-durable because the algorithm silently performs metacognitive operations (retrieval, error diagnosis, mastery evaluation) that students need to learn to perform independently, a phenomenon we term the personalization trap. The three modifications test whether returning these cognitive operations to the student makes learning gains persist after platform removal. Primary outcomes are multiple math assessments during the academic year. The study tests whether AI tutoring produces learning gains within existing public-school constraints and whether learning-science modifications to the platform's default interaction design improve the durability of those gains.</p></div></div>
+      </div>
+    </article>
+
+    <!-- WIP 2 -->
+    <article class="paper">
+      <div class="num">07</div>
+      <div class="body">
+        <h3 class="ptitle"><a href="https://thedocs.worldbank.org/en/doc/2fba81cd6cd60d2f54532fc7062395fb-0050062026/original/Can-EdTech-Close-Learning-Gaps.pdf" target="_blank" rel="noopener">Can EdTech Close Learning Gaps? Global Evidence from Digital Interventions</a></h3>
+        <p class="authors">with <b>Alegria Burneo</b>, <b>Lelys Dinarte-Díaz</b>, and <b>Ezequiel Molina</b></p>
+        <div class="links">
+          <a class="rlink" href="https://thedocs.worldbank.org/en/doc/2fba81cd6cd60d2f54532fc7062395fb-0050062026/original/Can-EdTech-Close-Learning-Gaps.pdf" target="_blank" rel="noopener">PDF</a>
+        </div>
+        <button class="abstract-toggle" aria-expanded="false"><span class="caret">▶</span> Abstract</button>
+        <div class="abstract-body"><div><p>Adaptive educational technology promises the personalization of teaching at a fraction of its cost, but experimental estimates vary widely in magnitude and in sign, and existing syntheses predate generative AI. We conduct a systematic review and meta-analysis of randomized controlled trials, bringing computer-assisted learning platforms and generative AI tools into a common framework under common inclusion criteria and on a common effect-size scale. Drawing on 191 effect sizes from 14 studies conducted in ten economies, we estimate that adaptive and AI-enabled interventions raise student learning by 0.125 sd relative to traditional instruction, above the median effect for education interventions evaluated by randomized trial. Among interventions delivering AI-powered tutoring or instruction, the average effect is 0.12 sd. We find no evidence that generative tools outperform the technologies that preceded them, though the confidence interval is wide enough to bound rather than resolve that comparison. Effects on socio-emotional outcomes are roughly a quarter the size, and we cannot reject the null for teaching practices. Both estimates, however, rely on a small number of papers, thus we treat these results as suggestive rather than conclusive. The evidence base remains narrow: no low-income settings and costs reported in only two studies.</p></div></div>
+      </div>
+    </article>
+
+    <!-- WIP 3 -->
+    <article class="paper">
+      <div class="num">08</div>
+      <div class="body">
+        <h3 class="ptitle">Scaling up Classroom Observation with Large Language Models: A Reliability Study of the World Bank's Teach Framework in Peru</h3>
+        <p class="authors">with <b>Jostin Kitmang</b>, <b>Matthew D. Krasnow</b>, <b>William J. Krasnow</b>, <b>Ezequiel Molina</b>, and <b>Carolina Moreira Vasquez</b></p>
       </div>
     </article>
   </section>
@@ -298,21 +322,19 @@
     <div class="pub">
       <div class="year">2023</div>
       <div class="body">
-        <h3 class="ptitle">Exacerbated Inequalities: the Learning Loss from COVID-19 in Italy</h3>
+        <h3 class="ptitle">Exacerbated Inequalities: the Learning Loss from COVID-19 in Italy <a class="titlelink" href="https://www.aeaweb.org/articles?id=10.1257/pandp.20231010" target="_blank" rel="noopener">Published version</a></h3>
         <p class="authors">with <b>Michela Carlana</b> and <b>Eliana La Ferrara</b></p>
         <p class="venue">AEA Papers and Proceedings, vol. 113, pp. 489–493</p>
-        <div class="links"><a class="rlink" href="https://www.aeaweb.org/articles?id=10.1257/pandp.20231010" target="_blank" rel="noopener">Published version</a></div>
       </div>
     </div>
 
     <div class="pub">
       <div class="year">2022</div>
       <div class="body">
-        <h3 class="ptitle">Does Patient Demand Contribute to the Overuse of Prescription Drugs?</h3>
+        <h3 class="ptitle">Does Patient Demand Contribute to the Overuse of Prescription Drugs? <a class="titlelink" href="https://www.aeaweb.org/articles?id=10.1257/app.20190722" target="_blank" rel="noopener">Published version</a></h3>
         <p class="authors">with <b>Anja Sautmann</b> and <b>Simone Schaner</b></p>
         <p class="venue">American Economic Journal: Applied Economics, vol. 14, no. 1, pp. 225–260</p>
         <div class="links">
-          <a class="rlink" href="https://www.aeaweb.org/articles?id=10.1257/app.20190722" target="_blank" rel="noopener">Published version</a>
           <a class="rlink" href="https://www.nber.org/papers/w25284" target="_blank" rel="noopener">NBER</a>
         </div>
       </div>
@@ -321,20 +343,18 @@
     <div class="pub">
       <div class="year">2016</div>
       <div class="body">
-        <h3 class="ptitle">Long-run effects of youth training programs: Experimental evidence from Argentina</h3>
+        <h3 class="ptitle">Long-run effects of youth training programs: Experimental evidence from Argentina <a class="titlelink" href="https://onlinelibrary.wiley.com/doi/abs/10.1111/ecin.12348" target="_blank" rel="noopener">Published version</a></h3>
         <p class="authors">with <b>María Laura Alzúa</b> and <b>Guillermo Cruces</b></p>
         <p class="venue">Economic Inquiry, vol. 54, issue 4, pp. 1839–1859</p>
-        <div class="links"><a class="rlink" href="https://onlinelibrary.wiley.com/doi/abs/10.1111/ecin.12348" target="_blank" rel="noopener">Published version</a></div>
       </div>
     </div>
 
     <div class="pub">
       <div class="year">2015</div>
       <div class="body">
-        <h3 class="ptitle">Effect of a community-led sanitation intervention on child diarrhoea and child growth in rural Mali: A cluster randomised controlled trial</h3>
+        <h3 class="ptitle">Effect of a community-led sanitation intervention on child diarrhoea and child growth in rural Mali: A cluster randomised controlled trial <a class="titlelink" href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X%2815%2900144-8/fulltext" target="_blank" rel="noopener">Published version</a></h3>
         <p class="authors">with <b>Amy Pickering</b>, <b>Habiba Djebbari</b>, <b>Massa Coulibaly</b>, and <b>María Laura Alzúa</b></p>
         <p class="venue">The Lancet Global Health, vol. 3, no. 11, pp. 701–711</p>
-        <div class="links"><a class="rlink" href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X%2815%2900144-8/fulltext" target="_blank" rel="noopener">Published version</a></div>
       </div>
     </div>
 
@@ -343,20 +363,18 @@
     <div class="pub">
       <div class="year">2014</div>
       <div class="body">
-        <h3 class="ptitle">The long and winding road towards fiscal decentralization</h3>
+        <h3 class="ptitle">The long and winding road towards fiscal decentralization <a class="titlelink" href="https://revistas.unlp.edu.ar/Economica/article/view/5347" target="_blank" rel="noopener">Published version</a></h3>
         <p class="authors">with <b>María Laura Alzúa</b></p>
         <p class="venue">Económica, Universidad Nacional de La Plata, vol. LX, pp. 3–43</p>
-        <div class="links"><a class="rlink" href="https://revistas.unlp.edu.ar/Economica/article/view/5347" target="_blank" rel="noopener">Published version</a></div>
       </div>
     </div>
 
     <div class="pub">
       <div class="year">2013</div>
       <div class="body">
-        <h3 class="ptitle">A Multidimensional Poverty Analysis: Recent Evidence of the Regions of Argentina</h3>
+        <h3 class="ptitle">A Multidimensional Poverty Analysis: Recent Evidence of the Regions of Argentina <a class="titlelink" href="https://ojs.econ.uba.ar/index.php/REPBA/article/view/558" target="_blank" rel="noopener">Published version</a></h3>
         <p class="authors">with <b>Romina Safojan</b></p>
         <p class="venue">Revista de Economía Política de Buenos Aires (REPBA), Universidad de Buenos Aires, no. 7, vol. 12, pp. 9–44</p>
-        <div class="links"><a class="rlink" href="https://ojs.econ.uba.ar/index.php/REPBA/article/view/558" target="_blank" rel="noopener">Published version</a></div>
       </div>
     </div>
 
@@ -365,10 +383,9 @@
     <div class="pub">
       <div class="year">2025</div>
       <div class="body">
-        <h3 class="ptitle">El Director LIBRE: El Método de IA que Libera Horas de Papeleo para Liderar el Aprendizaje</h3>
+        <h3 class="ptitle">El Director LIBRE: El Método de IA que Libera Horas de Papeleo para Liderar el Aprendizaje <a class="titlelink" href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099731109172514920" target="_blank" rel="noopener">Read the book</a></h3>
         <p class="authors">with <b>Ezequiel Molina</b>, <b>Octavio Lizama</b>, and <b>Paul Bambrick-Santoyo</b></p>
         <p class="venue">World Bank</p>
-        <div class="links"><a class="rlink" href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099731109172514920" target="_blank" rel="noopener">Read the book</a></div>
       </div>
     </div>
   </section>
